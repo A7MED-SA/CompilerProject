@@ -1,0 +1,14 @@
+D:\Final_Project\MainConsole\bin\Debug\net9.0\MainConsole.exe
+D:\Final_Project\MainConsole\bin\Debug\net9.0\MainConsole.deps.json
+D:\Final_Project\MainConsole\bin\Debug\net9.0\MainConsole.runtimeconfig.json
+D:\Final_Project\MainConsole\bin\Debug\net9.0\MainConsole.dll
+D:\Final_Project\MainConsole\bin\Debug\net9.0\MainConsole.pdb
+D:\Final_Project\MainConsole\obj\Debug\net9.0\MainConsole.GeneratedMSBuildEditorConfig.editorconfig
+D:\Final_Project\MainConsole\obj\Debug\net9.0\MainConsole.AssemblyInfoInputs.cache
+D:\Final_Project\MainConsole\obj\Debug\net9.0\MainConsole.AssemblyInfo.cs
+D:\Final_Project\MainConsole\obj\Debug\net9.0\MainConsole.csproj.CoreCompileInputs.cache
+D:\Final_Project\MainConsole\obj\Debug\net9.0\MainConsole.dll
+D:\Final_Project\MainConsole\obj\Debug\net9.0\refint\MainConsole.dll
+D:\Final_Project\MainConsole\obj\Debug\net9.0\MainConsole.pdb
+D:\Final_Project\MainConsole\obj\Debug\net9.0\MainConsole.genruntimeconfig.cache
+D:\Final_Project\MainConsole\obj\Debug\net9.0\ref\MainConsole.dll
