@@ -12,3 +12,4 @@ D:\Final_Project\MainConsole\obj\Debug\net9.0\refint\MainConsole.dll
 D:\Final_Project\MainConsole\obj\Debug\net9.0\MainConsole.pdb
 D:\Final_Project\MainConsole\obj\Debug\net9.0\MainConsole.genruntimeconfig.cache
 D:\Final_Project\MainConsole\obj\Debug\net9.0\ref\MainConsole.dll
+D:\Final_Project\MainConsole\obj\Debug\net9.0\MainConsole.sourcelink.json

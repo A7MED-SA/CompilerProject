@@ -58,7 +58,7 @@ namespace MainConsole.Servises
             _tokenDefinitions.Add(new TokenDefinition(@"ولا حاجة", TokenType.WalaHaga));
             _tokenDefinitions.Add(new TokenDefinition(@"جاعد", TokenType.Gaed));
             _tokenDefinitions.Add(new TokenDefinition(@"""[^""]*""", TokenType.StringLiteral));
-            _tokenDefinitions.Add(new TokenDefinition(@"[0-9٠-٩]+", TokenType.NumberLiteral));
+            _tokenDefinitions.Add(new TokenDefinition(@"[0-9٠-٩]+(?![\p{L}0-9٠-٩_])", TokenType.NumberLiteral));
             _tokenDefinitions.Add(new TokenDefinition(@"[\p{L}_][\p{L}0-9_]*", TokenType.Identifier));
             _tokenDefinitions.Add(new TokenDefinition(@"\+\+", TokenType.Increment));
             _tokenDefinitions.Add(new TokenDefinition(@"==", TokenType.EqualsEquals));
@@ -123,9 +123,19 @@ namespace MainConsole.Servises
 
                 if (!matchFound)
                 {
-                    string unknownChar = _remainingSource.Substring(0, 1);
-                    _tokens.Add(new Token(TokenType.Unknown, unknownChar, null, _line));
-                    _remainingSource = _remainingSource.Substring(1);
+                    // جمع كل الحروف/الأرقام المتصلة كـ Unknown token واحد
+                    int length = 1;
+                    while (length < _remainingSource.Length)
+                    {
+                        char c = _remainingSource[length];
+                        if (!char.IsLetterOrDigit(c) && c != '_')
+                            break;
+                        length++;
+                    }
+                    
+                    string unknownToken = _remainingSource.Substring(0, length);
+                    _tokens.Add(new Token(TokenType.Unknown, unknownToken, null, _line));
+                    _remainingSource = _remainingSource.Substring(length);
                 }
             }
 
