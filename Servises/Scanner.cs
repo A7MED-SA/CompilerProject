@@ -50,7 +50,7 @@ namespace MainConsole.Servises
             _tokenDefinitions.Add(new TokenDefinition(@"لو", TokenType.Law));
             _tokenDefinitions.Add(new TokenDefinition(@"والا", TokenType.Walla));
             _tokenDefinitions.Add(new TokenDefinition(@"علطول", TokenType.Alatol));
-            _tokenDefinitions.Add(new TokenDefinition(@"لفلهم", TokenType.Leflohom));
+            _tokenDefinitions.Add(new TokenDefinition(@"لفلفهم", TokenType.Laflafhom));
             _tokenDefinitions.Add(new TokenDefinition(@"لف", TokenType.Lef));
             _tokenDefinitions.Add(new TokenDefinition(@"الجوف", TokenType.ElGof));
             _tokenDefinitions.Add(new TokenDefinition(@"تسهيل", TokenType.Tasheel));
@@ -58,7 +58,7 @@ namespace MainConsole.Servises
             _tokenDefinitions.Add(new TokenDefinition(@"ولا حاجة", TokenType.WalaHaga));
             _tokenDefinitions.Add(new TokenDefinition(@"جاعد", TokenType.Gaed));
             _tokenDefinitions.Add(new TokenDefinition(@"""[^""]*""", TokenType.StringLiteral));
-            _tokenDefinitions.Add(new TokenDefinition(@"[0-9٠-٩]+(?![\p{L}0-9٠-٩_])", TokenType.NumberLiteral));
+            _tokenDefinitions.Add(new TokenDefinition(@"[0-9٠-٩۰-۹]+", TokenType.NumberLiteral));
             _tokenDefinitions.Add(new TokenDefinition(@"[\p{L}_][\p{L}0-9_]*", TokenType.Identifier));
             _tokenDefinitions.Add(new TokenDefinition(@"\+\+", TokenType.Increment));
             _tokenDefinitions.Add(new TokenDefinition(@"==", TokenType.EqualsEquals));
@@ -123,7 +123,6 @@ namespace MainConsole.Servises
 
                 if (!matchFound)
                 {
-                    // جمع كل الحروف/الأرقام المتصلة كـ Unknown token واحد
                     int length = 1;
                     while (length < _remainingSource.Length)
                     {

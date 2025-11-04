@@ -3,20 +3,40 @@
   "WorkspaceRootPath": "D:\\Final_Project\\MainConsole\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DF29F703-DC97-4AC8-82FC-26855C31DD33}|MainConsole.csproj|d:\\final_project\\mainconsole\\servises\\scanner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF29F703-DC97-4AC8-82FC-26855C31DD33}|MainConsole.csproj|solutionrelative:servises\\scanner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DF29F703-DC97-4AC8-82FC-26855C31DD33}|MainConsole.csproj|d:\\final_project\\mainconsole\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DF29F703-DC97-4AC8-82FC-26855C31DD33}|MainConsole.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF29F703-DC97-4AC8-82FC-26855C31DD33}|MainConsole.csproj|d:\\final_project\\mainconsole\\wah_ya-saeidi_l\\tokentype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF29F703-DC97-4AC8-82FC-26855C31DD33}|MainConsole.csproj|solutionrelative:wah_ya-saeidi_l\\tokentype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DF29F703-DC97-4AC8-82FC-26855C31DD33}|MainConsole.csproj|d:\\final_project\\mainconsole\\servises\\parser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF29F703-DC97-4AC8-82FC-26855C31DD33}|MainConsole.csproj|solutionrelative:servises\\parser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF29F703-DC97-4AC8-82FC-26855C31DD33}|MainConsole.csproj|d:\\final_project\\mainconsole\\servises\\methods\\parsermethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF29F703-DC97-4AC8-82FC-26855C31DD33}|MainConsole.csproj|solutionrelative:servises\\methods\\parsermethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF29F703-DC97-4AC8-82FC-26855C31DD33}|MainConsole.csproj|d:\\final_project\\mainconsole\\servises\\grammers\\parsernodes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF29F703-DC97-4AC8-82FC-26855C31DD33}|MainConsole.csproj|solutionrelative:servises\\grammers\\parsernodes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF29F703-DC97-4AC8-82FC-26855C31DD33}|MainConsole.csproj|d:\\final_project\\mainconsole\\datastructure\\parsererror.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF29F703-DC97-4AC8-82FC-26855C31DD33}|MainConsole.csproj|solutionrelative:datastructure\\parsererror.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF29F703-DC97-4AC8-82FC-26855C31DD33}|MainConsole.csproj|d:\\final_project\\mainconsole\\servises\\scanner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF29F703-DC97-4AC8-82FC-26855C31DD33}|MainConsole.csproj|solutionrelative:servises\\scanner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF29F703-DC97-4AC8-82FC-26855C31DD33}|MainConsole.csproj|d:\\final_project\\mainconsole\\example.wys||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{DF29F703-DC97-4AC8-82FC-26855C31DD33}|MainConsole.csproj|solutionrelative:example.wys||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DF29F703-DC97-4AC8-82FC-26855C31DD33}|MainConsole.csproj|d:\\final_project\\mainconsole\\datastructure\\token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DF29F703-DC97-4AC8-82FC-26855C31DD33}|MainConsole.csproj|solutionrelative:datastructure\\token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF29F703-DC97-4AC8-82FC-26855C31DD33}|MainConsole.csproj|d:\\final_project\\mainconsole\\wah_ya-saeidi_l\\tokentype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF29F703-DC97-4AC8-82FC-26855C31DD33}|MainConsole.csproj|solutionrelative:wah_ya-saeidi_l\\tokentype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,56 +46,118 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TokenType.cs",
-              "DocumentMoniker": "D:\\Final_Project\\MainConsole\\Wah_Ya-Saeidi_L\\TokenType.cs",
-              "RelativeDocumentMoniker": "Wah_Ya-Saeidi_L\\TokenType.cs",
-              "ToolTip": "D:\\Final_Project\\MainConsole\\Wah_Ya-Saeidi_L\\TokenType.cs",
-              "RelativeToolTip": "Wah_Ya-Saeidi_L\\TokenType.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAAwCYAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Parser.cs",
+              "DocumentMoniker": "D:\\Final_Project\\MainConsole\\Servises\\Parser.cs",
+              "RelativeDocumentMoniker": "Servises\\Parser.cs",
+              "ToolTip": "D:\\Final_Project\\MainConsole\\Servises\\Parser.cs",
+              "RelativeToolTip": "Servises\\Parser.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowBAAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T16:11:09.54Z",
+              "WhenOpened": "2025-11-04T11:11:25.528Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "ParserNodes.cs",
+              "DocumentMoniker": "D:\\Final_Project\\MainConsole\\Servises\\Grammers\\ParserNodes.cs",
+              "RelativeDocumentMoniker": "Servises\\Grammers\\ParserNodes.cs",
+              "ToolTip": "D:\\Final_Project\\MainConsole\\Servises\\Grammers\\ParserNodes.cs",
+              "RelativeToolTip": "Servises\\Grammers\\ParserNodes.cs",
+              "ViewState": "AgIAAOQAAAAAAAAAAAAmwO8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T16:12:12.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ParserMethod.cs",
+              "DocumentMoniker": "D:\\Final_Project\\MainConsole\\Servises\\Methods\\ParserMethod.cs",
+              "RelativeDocumentMoniker": "Servises\\Methods\\ParserMethod.cs",
+              "ToolTip": "D:\\Final_Project\\MainConsole\\Servises\\Methods\\ParserMethod.cs",
+              "RelativeToolTip": "Servises\\Methods\\ParserMethod.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAIwE8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T16:05:00.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ParserError.cs",
+              "DocumentMoniker": "D:\\Final_Project\\MainConsole\\DataStructure\\ParserError.cs",
+              "RelativeDocumentMoniker": "DataStructure\\ParserError.cs",
+              "ToolTip": "D:\\Final_Project\\MainConsole\\DataStructure\\ParserError.cs",
+              "RelativeToolTip": "DataStructure\\ParserError.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAwwBMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T15:58:37.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "example.wys",
+              "DocumentMoniker": "D:\\Final_Project\\MainConsole\\example.wys",
+              "RelativeDocumentMoniker": "example.wys",
+              "ToolTip": "D:\\Final_Project\\MainConsole\\example.wys",
+              "RelativeToolTip": "example.wys",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAgwCEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-29T05:31:06.43Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TokenType.cs",
+              "DocumentMoniker": "D:\\Final_Project\\MainConsole\\Wah_Ya-Saeidi_L\\TokenType.cs",
+              "RelativeDocumentMoniker": "Wah_Ya-Saeidi_L\\TokenType.cs",
+              "ToolTip": "D:\\Final_Project\\MainConsole\\Wah_Ya-Saeidi_L\\TokenType.cs",
+              "RelativeToolTip": "Wah_Ya-Saeidi_L\\TokenType.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB4AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T16:11:09.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Token.cs",
               "DocumentMoniker": "D:\\Final_Project\\MainConsole\\DataStructure\\Token.cs",
               "RelativeDocumentMoniker": "DataStructure\\Token.cs",
               "ToolTip": "D:\\Final_Project\\MainConsole\\DataStructure\\Token.cs",
               "RelativeToolTip": "DataStructure\\Token.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAUAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T16:09:23.212Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-28T16:09:23.212Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "Scanner.cs",
               "DocumentMoniker": "D:\\Final_Project\\MainConsole\\Servises\\Scanner.cs",
               "RelativeDocumentMoniker": "Servises\\Scanner.cs",
               "ToolTip": "D:\\Final_Project\\MainConsole\\Servises\\Scanner.cs",
               "RelativeToolTip": "Servises\\Scanner.cs",
-              "ViewState": "AgIAAJQAAAAAAAAAAAAnwJkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAIwIEAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T16:07:54.198Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-28T16:07:54.198Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Final_Project\\MainConsole\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Final_Project\\MainConsole\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAQwBwAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAEwC8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-28T16:05:54.734Z",
               "EditorCaption": ""

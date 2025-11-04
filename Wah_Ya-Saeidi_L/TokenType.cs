@@ -20,7 +20,7 @@ namespace MainConsole.Wah_Ya_Saeidi_L
         Walla,       // والا
         Alatol,      // علطول
         Lef,         // لف
-        Leflohom,    // لفلهم
+        Laflafhom,    // لفلهم
         ElGof,       // الجوف
         Tasheel,     // تسهيل
         Eila,        // عيلة
