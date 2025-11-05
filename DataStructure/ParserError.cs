@@ -9,9 +9,10 @@ namespace MainConsole.DataStructure
     public class ParserError
     {
         public int Line { get; set; }
-        public string Message { get; set; }
-        public string TokenFound { get; set; }
-        public string Expected { get; set; }
+        public string Message { get; set; } = "";
+        public string TokenFound { get; set; } = "";
+        public string Expected { get; set; } = "";
+    
 
         public override string ToString()
         {

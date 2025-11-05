@@ -13,7 +13,7 @@ namespace MainConsole.Servises
         private List<Token> _tokens;
         private int _current = 0;
 
-        public ProgramNode AST { get; private set; }
+        public ProgramNode? AST { get; private set; }
         public List<ParserError> Errors { get; private set; }
         public List<string> Warnings { get; private set; }
 
@@ -30,44 +30,32 @@ namespace MainConsole.Servises
             {
                 var astRoot = new ProgramNode();
 
+                // Parse: عيلة ClassName {
                 if (!Match(TokenType.Eila))
                 {
                     AddError("البرنامج لازم يبدأ بـ 'عيلة'", "");
                     return false;
                 }
-                Consume(TokenType.Identifier, "توقع اسم الكلاس");
-                Consume(TokenType.OpenBrace, "توقع '{'");
-                if (!Match(TokenType.Gaed))
-                {
-                    AddError("توقع 'جاعد' بعد تعريف الكلاس", "");
-                    return false;
-                }
-                if (Match(TokenType.Hesba)) { /* (لا نحتاج لشيء في الـ AST حالياً) */ }
-                if (!Match(TokenType.SamoAlikom))
-                {
-                    AddError("توقع 'سامو عليكم' كاسم للدالة الرئيسية", "");
-                    return false;
-                }
-                Consume(TokenType.OpenParen, "توقع '('");
-                Consume(TokenType.CloseParen, "توقع ')'");
+                Token className = Consume(TokenType.Identifier, "توقع اسم الكلاس");
+                astRoot.ClassName = className.Lexeme;
                 Consume(TokenType.OpenBrace, "توقع '{'");
 
+                // Parse multiple functions
                 while (!Check(TokenType.CloseBrace) && !IsAtEnd())
                 {
                     try
                     {
-                        var stmtAST = ParseStatement();
-                        if (stmtAST != null)
-                            astRoot.Statements.Add(stmtAST);
+                        var functionNode = ParseFunction();
+                        if (functionNode != null)
+                            astRoot.Functions.Add(functionNode);
                     }
                     catch (Exception ex)
                     {
                         AddError(ex.Message, Peek().Lexeme);
-                        Synchronize();
+                        SynchronizeFunction();
                     }
                 }
 
-                Consume(TokenType.CloseBrace, "توقع '}' لإغلاق الدالة");
                 Consume(TokenType.CloseBrace, "توقع '}' لإغلاق الكلاس");
 
                 AST = astRoot;
@@ -77,6 +65,105 @@ namespace MainConsole.Servises
             {
                 AddError("خطأ عام: " + ex.Message, "");
                 return false;
+            }
+        }
+
+        private FunctionNode ParseFunction()
+        {
+            // Parse: [جاعد (optional)] حيسبة (required) [return_type (optional)] FunctionName (required) () { ... }
+            bool isStatic = false;
+            Token? returnTypeToken = null;
+            Token? nameToken = null;
+
+            // Parse optional 'جاعد' (static modifier)
+            if (Match(TokenType.Gaed))
+            {
+                isStatic = true;
+            }
+
+            // Parse required 'حيسبة' (function start keyword)
+            if (!Match(TokenType.Hesba))
+            {
+                AddError("توقع 'حيسبة' لبداية الدالة", Peek().Lexeme);
+                throw new Exception("توقع 'حيسبة' لبداية الدالة");
+            }
+
+            // Parse optional return type (رقم, كلام, كسر, صحغلط, or identifier)
+            if (Check(TokenType.Rakam) || Check(TokenType.Kalam) || 
+                Check(TokenType.Kasr) || Check(TokenType.SahGhalat))
+            {
+                returnTypeToken = Advance();
+            }
+            else if (Check(TokenType.Identifier))
+            {
+                // Could be return type or function name - need to check if next token is identifier or '('
+                Token next = PeekNext();
+                if (next.Type == TokenType.Identifier || next.Type == TokenType.SamoAlikom)
+                {
+                    // Current token is return type, next is function name
+                    returnTypeToken = Advance();
+                }
+                // else: current token is function name (no return type)
+            }
+
+            // Parse function name (either 'سامو عليكم' or identifier)
+            if (Match(TokenType.SamoAlikom))
+            {
+                nameToken = Previous();
+            }
+            else if (Check(TokenType.Identifier))
+            {
+                nameToken = Advance();
+            }
+            else
+            {
+                AddError("توقع اسم الدالة", Peek().Lexeme);
+                throw new Exception("توقع اسم الدالة");
+            }
+
+            // Parse parameters ()
+            Consume(TokenType.OpenParen, "توقع '('");
+            Consume(TokenType.CloseParen, "توقع ')'");
+
+            // Parse body
+            Consume(TokenType.OpenBrace, "توقع '{'");
+            var body = new BlockNode();
+
+            while (!Check(TokenType.CloseBrace) && !IsAtEnd())
+            {
+                try
+                {
+                    var stmtAST = ParseStatement();
+                    if (stmtAST != null)
+                        body.Statements.Add(stmtAST);
+                }
+                catch (Exception ex)
+                {
+                    AddError(ex.Message, Peek().Lexeme);
+                    Synchronize();
+                }
+            }
+
+            Consume(TokenType.CloseBrace, "توقع '}' لإغلاق الدالة");
+
+            return new FunctionNode
+            {
+                IsStatic = isStatic,
+                ReturnTypeToken = returnTypeToken,
+                NameToken = nameToken,
+                Body = body
+            };
+        }
+
+        private void SynchronizeFunction()
+        {
+            Advance();
+            while (!IsAtEnd())
+            {
+                if (Check(TokenType.Hesba) || Check(TokenType.CloseBrace))
+                    return;
+
+                Advance();
             }
         }
 
@@ -334,17 +421,17 @@ namespace MainConsole.Servises
             return sb.ToString();
         }
 
-        public string GetWarningsString()
-        {
-            if (Warnings.Count == 0) return "✓ لا توجد تحذيرات";
+        // public string GetWarningsString()
+        // {
+        //     if (Warnings.Count == 0) return "✓ لا توجد تحذيرات";
 
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"===== التحذيرات ({Warnings.Count}) =====");
-            foreach (var warning in Warnings)
-            {
-                sb.AppendLine($"⚠ {warning}");
-            }
-            return sb.ToString();
-        }
+        //     StringBuilder sb = new StringBuilder();
+        //     sb.AppendLine($"===== التحذيرات ({Warnings.Count}) =====");
+        //     foreach (var warning in Warnings)
+        //     {
+        //         sb.AppendLine($"⚠ {warning}");
+        //     }
+        //     return sb.ToString();
+        // }
     }
 }

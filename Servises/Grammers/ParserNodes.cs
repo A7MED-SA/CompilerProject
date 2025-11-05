@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MainConsole.DataStructure;
 
 namespace MainConsole.Servises.Grammers
 {
@@ -13,20 +14,21 @@ namespace MainConsole.Servises.Grammers
 
     public class ProgramNode : ASTNode
     {
-        public List<ASTNode> Statements { get; set; }
+        public string ClassName { get; set; } = "";
+        public List<FunctionNode> Functions { get; set; }
 
         public ProgramNode()
         {
-            Statements = new List<ASTNode>();
+            Functions = new List<FunctionNode>();
         }
 
         public override string Print(int indent = 0)
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("Program");
-            foreach (var stmt in Statements)
+            sb.AppendLine($"Program(Class: {ClassName})");
+            foreach (var func in Functions)
             {
-                sb.Append(stmt.Print(indent + 1));
+                sb.Append(func.Print(indent + 1));
             }
             return sb.ToString();
         }
@@ -156,7 +158,7 @@ namespace MainConsole.Servises.Grammers
 
     public class VariableNode : ASTNode
     {
-        public string Name { get; set; }
+        public string Name { get; set; } = "";
 
         public override string Print(int indent = 0)
         {
@@ -167,35 +169,36 @@ namespace MainConsole.Servises.Grammers
 
     public class AssignmentNode : ASTNode
     {
-        public string Name { get; set; }
-        public ASTNode Value { get; set; }
+        public string Name { get; set; } = "";
+        public ASTNode? Value { get; set; }
 
         public override string Print(int indent = 0)
         {
             string ind = new string(' ', indent * 2);
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"{ind}Assignment({Name})");
-            sb.Append(Value.Print(indent + 1));
+            if (Value != null)
+                sb.Append(Value.Print(indent + 1));
             return sb.ToString();
         }
     }
 
     public class PostfixIncrementNode : ASTNode
     {
-        public VariableNode Variable { get; set; }
+        public VariableNode? Variable { get; set; }
         public override string Print(int indent = 0)
         {
             string ind = new string(' ', indent * 2);
-            return $"{ind}PostfixIncrement({Variable.Name})\n";
+            return $"{ind}PostfixIncrement({Variable?.Name})\n";
         }
     }
 
     public class ForNode : ASTNode
     {
-        public ASTNode Initializer { get; set; }
-        public ASTNode Condition { get; set; }
-        public ASTNode Increment { get; set; }
-        public ASTNode Body { get; set; }
+        public ASTNode? Initializer { get; set; }
+        public ASTNode? Condition { get; set; }
+        public ASTNode? Increment { get; set; }
+        public ASTNode? Body { get; set; }
 
         public override string Print(int indent = 0)
         {
@@ -216,7 +219,8 @@ namespace MainConsole.Servises.Grammers
             else sb.AppendLine($"{ind}    (none)");
 
             sb.AppendLine($"{ind}  Body:");
-            sb.Append(Body.Print(indent + 2));
+            if (Body != null) sb.Append(Body.Print(indent + 2));
+            else sb.AppendLine($"{ind}    (none)");
 
             return sb.ToString();
         }
@@ -224,7 +228,7 @@ namespace MainConsole.Servises.Grammers
 
     public class ReturnNode : ASTNode
     {
-        public ASTNode ReturnValue { get; set; }
+        public ASTNode? ReturnValue { get; set; }
 
         public override string Print(int indent = 0)
         {
@@ -234,6 +238,31 @@ namespace MainConsole.Servises.Grammers
             if (ReturnValue != null)
             {
                 sb.Append(ReturnValue.Print(indent + 1));
+            }
+            return sb.ToString();
+        }
+    }
+
+    public class FunctionNode : ASTNode
+    {
+        public bool IsStatic { get; set; }
+        public Token? ReturnTypeToken { get; set; }
+        public Token? NameToken { get; set; }
+        public BlockNode? Body { get; set; }
+
+        // Properties للوصول السريع
+        public string ReturnType => ReturnTypeToken?.Lexeme ?? "void";
+        public string Name => NameToken?.Lexeme ?? "";
+        public int Line => NameToken?.Line ?? 0;
+
+        public override string Print(int indent = 0)
+        {
+            string ind = new string(' ', indent * 2);
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"{ind}Function({(IsStatic ? "جاعد " : "")}{ReturnType} {Name}) [Line {Line}]");
+            if (Body != null)
+            {
+                sb.Append(Body.Print(indent + 1));
             }
             return sb.ToString();
         }

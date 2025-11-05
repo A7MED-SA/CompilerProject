@@ -91,6 +91,7 @@ namespace MainConsole.Servises
                     case TokenType.Law:
                     case TokenType.Lef:
                     case TokenType.Ektob:
+                    case TokenType.Hesba:  
                         return;
                 }
 
