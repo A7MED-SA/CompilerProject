@@ -17,7 +17,7 @@ namespace MainConsole
     جاعد حيسبة سامو عليكم () 
     {
         رقم سن = ٢٥ ; 
-        5رقم سن = 79 ;
+        رقم سن = 79 ;
         كلام اسم = ""محمود"" ; 
         اكتوب ( "" السلام عليكم يا جماعة "" ); 
         اكتوب ( "" أنا "" + اسم + "" وعندي "" + سن + "" سنة. "" ); 
@@ -51,7 +51,15 @@ namespace MainConsole
         رقم ول = ٢٥ ; 
 
     }
-}";
+}
+عيلة عليوه 
+{
+ 	جاعد حيسبة مونو () {
+	        رقم العد = 0;
+
+}
+}
+";
 
             Scanner scanner = new Scanner(sourceCode);
             List<Token> tokens = scanner.ScanTokens();
@@ -77,7 +85,12 @@ namespace MainConsole
 
             if (success)
             {
-                Console.WriteLine($"\n✓ عدد الجمل: {parser.AST.Statements.Count}");
+                var totalStatements = parser.AST.Classes
+                    .SelectMany(c => c.Functions)
+                    .SelectMany(f => f.Body?.Statements ?? new List<MainConsole.Servises.Grammers.ASTNode>())
+                    .Count();
+                Console.WriteLine($"\n✓ عدد الكلاسات: {parser.AST.Classes.Count}");
+                Console.WriteLine($"✓ عدد الجمل: {totalStatements}");
             }
         }
     }
